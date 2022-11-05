@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "../layout/Layout";
-import AdManagement from "../pages/AdManagement";
-import DashBoard from "../pages/DashBoard";
+import AdManagement from "../pages/AdManagement/AdManagement";
+import DashBoard from "../pages/DashBoard/DashBoard";
 
 export default function Router() {
   return (

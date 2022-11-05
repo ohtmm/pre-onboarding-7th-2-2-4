@@ -18,11 +18,9 @@ export default function Layout() {
 
 const Container = styled.div`
   display: flex;
-  width: 1440px;
+  width: 100%;
   height: 1836px;
   background-color: ${(props) => props.theme.color.bg_gray};
 `;
 
-const Content = styled.div`
-  flex-grow: 1;
-`;
+const Content = styled.div``;
