@@ -1,11 +1,15 @@
 import { atom } from "recoil";
+import { recoilPersist } from "recoil-persist";
+const { persistAtom } = recoilPersist();
 
 export const trendState = atom({
   key: "trend",
-  default: []
+  default: [],
+  effects_UNSTABLE: [persistAtom]
 });
 
 export const adListState = atom({
   key: "adList",
-  default: []
+  default: [],
+  effects_UNSTABLE: [persistAtom]
 });
