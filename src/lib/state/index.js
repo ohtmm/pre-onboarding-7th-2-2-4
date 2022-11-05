@@ -8,4 +8,4 @@ export const trendState = atom({
 export const adListState = atom({
   key: "adList",
   default: []
-})
+});
