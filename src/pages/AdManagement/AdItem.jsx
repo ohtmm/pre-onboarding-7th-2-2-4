@@ -1,25 +1,51 @@
+import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 import Button from "../../component/Button";
 
-export default function AdItem() {
+export default function AdItem({ adItem }) {
+  console.log(adItem);
+  const { adType, title, budget, status, startDate, endDate, report } = adItem;
+  const { cost, convValue, roas } = report;
   return (
     <AdItemContainer>
-      <AdName>웹광고_20210603123030</AdName>
+      <AdName>
+        {adType === "web" ? "웹광고" : "앱광고"}_{title}
+      </AdName>
       <AdDataList>
         <AdDataItem>
           <p>상태</p>
-          <span>진행중</span>
+          <span>{status === "active" ? "진행중" : "중단됨"}</span>
         </AdDataItem>
         <AdDataItem>
-          <p>상태</p>
-          <span>진행중</span>
+          <p>광고생성일</p>
+          <span>{startDate}</span>
+        </AdDataItem>
+        <AdDataItem>
+          <p>일 희망 예상</p>
+          <span>{budget}</span>
+        </AdDataItem>
+        <AdDataItem>
+          <p>광고 수익률</p>
+          <span>{roas}</span>
+        </AdDataItem>
+        <AdDataItem>
+          <p>매출</p>
+          <span>{convValue}</span>
+        </AdDataItem>
+        <AdDataItem>
+          <p>광고 비용</p>
+          <span>{cost}</span>
         </AdDataItem>
       </AdDataList>
       <Button text="수정하기" />
     </AdItemContainer>
   );
 }
+
+AdItem.propTypes = {
+  adItem: PropTypes.object
+};
 
 const AdItemContainer = styled.div`
   width: 305px;

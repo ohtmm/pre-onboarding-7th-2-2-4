@@ -1,9 +1,9 @@
+import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
-export default function SelectButton({ children }) {
-  return <SelectContainer>{children}</SelectContainer>;
+export default function SelectButton({ onChange, children }) {
+  return <SelectContainer onChange={onChange}>{children}</SelectContainer>;
 }
 
 const SelectContainer = styled.select`
@@ -19,5 +19,6 @@ const SelectContainer = styled.select`
 `;
 
 SelectButton.propTypes = {
-  children: PropTypes.node.isRequired
+  onChange: PropTypes.func,
+  children: PropTypes.node
 };
