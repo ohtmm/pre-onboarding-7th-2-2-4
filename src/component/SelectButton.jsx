@@ -19,5 +19,5 @@ const SelectContainer = styled.select`
 `;
 
 SelectButton.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node
 };
