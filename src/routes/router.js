@@ -10,7 +10,7 @@ export default function Router() {
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<DashBoard />} />
-          <Route path="/manage" element={<AdManagement />} />
+          <Route path="/adcenter" element={<AdManagement />} />
         </Route>
       </Routes>
     </BrowserRouter>

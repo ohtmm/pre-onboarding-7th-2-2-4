@@ -1,14 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
-export default function SelectButton() {
-  return (
-    <SelectContainer>
-      <option value="ROAS">
-        <span></span>ROAS
-      </option>
-    </SelectContainer>
-  );
+export default function SelectButton({ children }) {
+  return <SelectContainer>{children}</SelectContainer>;
 }
 
 const SelectContainer = styled.select`
@@ -22,3 +17,7 @@ const SelectContainer = styled.select`
   line-height: 16px;
   color: ${(props) => props.theme.color.gray_800};
 `;
+
+SelectButton.propTypes = {
+  children: PropTypes.node.isRequired
+};

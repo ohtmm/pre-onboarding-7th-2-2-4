@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { BoardContainer } from "../DashBoard/Board";
+import Button from "../../component/Button";
 import ContentHeader from "../../component/Content/ContentHeader";
+import SelectButton from "../../component/SelectButton";
 import AdItem from "./AdItem";
 
 export default function AdManagement() {
@@ -9,6 +10,14 @@ export default function AdManagement() {
     <>
       <ContentHeader title="광고관리" />
       <AdBoard>
+        <ButtonContainer>
+          <SelectButton>
+            <option value="all">전체 광고</option>
+            <option value="now">진행 중</option>
+            <option value="done">중단</option>
+          </SelectButton>
+          <Button text="광고 만들기" bgColor="primary_blue" />
+        </ButtonContainer>
         <AdList>
           <AdItem />
           <AdItem />
@@ -22,7 +31,7 @@ export default function AdManagement() {
 }
 const AdBoard = styled.div`
   width: 1039px;
-  height: 654px;
+  height: 1020px;
   margin: 20px auto;
   padding-top: 30px;
   background: ${(props) => props.theme.color.bg_white};
@@ -30,4 +39,15 @@ const AdBoard = styled.div`
   border-radius: 20px;
 `;
 
-const AdList = styled.ul``;
+const AdList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 30px;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 50px 30px 30px;
+`;
